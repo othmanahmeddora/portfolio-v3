@@ -27,7 +27,7 @@ const Header = () => {
     <div className="fixed top-[2rem] right-[2rem]">
       <div
         ref={menuRef}
-        className="bg-[#c9fd74] w-[6.5rem] h-[2.5rem] rounded-[1.5rem]"
+        className="bg-[#c9fd74] w-full h-full rounded-[1.5rem]"
       >
         <NavLinks />
       </div>
