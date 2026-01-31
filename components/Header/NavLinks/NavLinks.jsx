@@ -1,4 +1,5 @@
 import { links } from "@/lib/navLinks";
+import { socialLinks } from "@/lib/socialLinks";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import CustomEase from "gsap/dist/CustomEase";
@@ -7,6 +8,7 @@ import React, { useRef } from "react";
 
 const NavLinks = ({ isActive }) => {
   const linkRef = useRef(null);
+  const socialRef = useRef(null);
   const linkEase = CustomEase.create("link", ".215, .61, .355, 1");
 
   useGSAP(
@@ -38,6 +40,32 @@ const NavLinks = ({ isActive }) => {
     { scope: linkRef, dependencies: [isActive] },
   );
 
+  useGSAP(
+    () => {
+      if (!isActive) {
+        gsap.fromTo(
+          ".social-link",
+          { opacity: 0 },
+          {
+            opacity: 1,
+            duration: 1,
+            stagger: 0.1,
+            delay: 0.75,
+            ease: linkEase,
+            overwrite: "auto",
+          },
+        );
+      } else {
+        gsap.to(".social-link", {
+          opacity: 0,
+          duration: 0.5,
+          overwrite: "auto",
+        });
+      }
+    },
+    { scope: socialRef, dependencies: [isActive] },
+  );
+
   return (
     <nav>
       <div
@@ -55,6 +83,17 @@ const NavLinks = ({ isActive }) => {
               </Link>
             </div>
           </div>
+        ))}
+      </div>
+
+      <div
+        ref={socialRef}
+        className="translate-y-[15rem] translate-x-[2rem] flex flex-wrap gap-x-[12rem]"
+      >
+        {socialLinks.map((link) => (
+          <Link className="social-link" key={link.id} href={link.path}>
+            {link.name}
+          </Link>
         ))}
       </div>
     </nav>
