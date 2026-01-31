@@ -1,34 +1,36 @@
 import gsap from "gsap";
 import SplitText from "gsap/dist/SplitText";
-import React from "react";
+import React, { useRef } from "react";
 
 const NavLabel = ({ label, ease }) => {
-  gsap.registerPlugin(SplitText);
+  const scope = useRef(null);
 
   const handleHover = () => {
-    let split1 = SplitText.create(".label-1", {
-      type: "chars",
-    });
-    let split2 = SplitText.create(".label-2", {
-      type: "chars",
-    });
+    let ctx = gsap.context(() => {
+      const split1 = new SplitText(".label-1", { type: "chars" });
+      const split2 = new SplitText(".label-2", { type: "chars" });
 
-    let tl = gsap.timeline();
-
-    tl.to(split1.chars, { y: "-100%", stagger: 0.1, ease: ease }).to(
-      split2.chars,
-      {
-        y: "-100%",
-        stagger: 0.1,
-        ease: ease,
-      },
-      "<",
-    );
+      gsap
+        .timeline()
+        .to(split1.chars, {
+          y: "-100%",
+          stagger: 0.05,
+          duration: 0.4,
+          ease: ease,
+        })
+        .to(
+          split2.chars,
+          { y: "-100%", stagger: 0.05, duration: 0.4, ease: ease },
+          "<",
+        );
+    }, scope);
   };
 
   return (
     <div
+      ref={scope}
       onMouseEnter={handleHover}
+      onMouseLeave={handleHover}
       className="relative flex flex-col items-center justify-center overflow-hidden"
       style={{ lineHeight: 0.85 }}
     >
