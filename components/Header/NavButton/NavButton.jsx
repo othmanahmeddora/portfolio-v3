@@ -21,6 +21,7 @@ const NavButton = ({ isActive, setIsActive }) => {
       y: isActive ? "-100%" : 0,
       duration: 0.5,
       ease: navEase,
+      delay: !isActive && ".3",
     });
   };
 

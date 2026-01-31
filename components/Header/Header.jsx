@@ -14,12 +14,13 @@ const Header = () => {
 
   useEffect(() => {
     gsap.to(menuRef.current, {
-      x: !isActive ? "1rem" : "0",
-      y: !isActive ? "-1rem" : "0",
-      width: !isActive ? "30rem" : "6.5rem",
-      height: !isActive ? "40.6rem" : "2.5rem",
+      x: !isActive && "1rem",
+      y: !isActive && "-1rem",
+      width: isActive ? "6.5rem" : "30rem",
+      height: isActive ? "2.5rem" : "40.6rem",
       duration: 0.75,
       ease: navEase,
+      delay: isActive && ".3",
     });
   }, [isActive]);
 
@@ -29,7 +30,7 @@ const Header = () => {
         ref={menuRef}
         className="bg-[#c9fd74] w-full h-full rounded-[1.5rem]"
       >
-        <NavLinks />
+        <NavLinks isActive={isActive} ease={navEase} />
       </div>
       <NavButton isActive={isActive} setIsActive={setIsActive} />
     </div>
