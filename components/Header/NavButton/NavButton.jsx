@@ -33,7 +33,7 @@ const NavButton = ({ isActive, setIsActive }) => {
         <div className="bg-[#c9fd74] w-full h-full flex items-center justify-center">
           <NavLabel label={"menu"} ease={navEase} />
         </div>
-        <div className="bg-black text-white w-full h-full flex items-center justify-center">
+        <div className="bg-black text-[#c0fd74] w-full h-full flex items-center justify-center">
           <NavLabel label={"close"} ease={navEase} />
         </div>
       </div>
