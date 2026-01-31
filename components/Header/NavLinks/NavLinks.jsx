@@ -48,7 +48,7 @@ const NavLinks = ({ isActive }) => {
           { opacity: 0 },
           {
             opacity: 1,
-            duration: 1,
+            duration: 2,
             stagger: 0.1,
             delay: 0.75,
             ease: linkEase,
