@@ -3,12 +3,13 @@
 import gsap from "gsap";
 import CustomEase from "gsap/dist/CustomEase";
 import NavLabel from "../NavLabel/NavLabel";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 
 const NavButton = ({ isActive, setIsActive }) => {
   const sliderRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.registerPlugin(CustomEase);
   });
 

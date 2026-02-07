@@ -6,7 +6,7 @@ import CustomEase from "gsap/dist/CustomEase";
 import Link from "next/link";
 import React, { useRef } from "react";
 
-const NavLinks = ({ isActive }) => {
+const NavLinks = ({ isActive, setIsActive }) => {
   const linkEase = CustomEase.create("link", ".215, .61, .355, 1");
 
   useGSAP(() => {

@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import NavButton from "./NavButton/NavButton";
 import gsap from "gsap";
 import CustomEase from "gsap/dist/CustomEase";
 import NavLinks from "./NavLinks/NavLinks";
+import { useGSAP } from "@gsap/react";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(true);
   const menuRef = useRef(null);
-
   const navEase = CustomEase.create("navButton", "0.76, 0, 0.24, 1");
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.to(menuRef.current, {
       x: !isActive && "1rem",
       y: !isActive && "-1rem",
@@ -25,15 +25,21 @@ const Header = () => {
   }, [isActive]);
 
   return (
-    <div className="fixed top-[2rem] right-[2rem]">
-      <div
-        ref={menuRef}
-        className="bg-[#c9fd74] rounded-[1.5rem] w-[6.5rem] h-[2.5rem]"
-      >
-        <NavLinks isActive={isActive} ease={navEase} />
-      </div>
-      <NavButton isActive={isActive} setIsActive={setIsActive} />
-    </div>
+    <header>
+      <section className="fixed top-[2rem] right-[2rem]">
+        <div
+          ref={menuRef}
+          className="bg-[#c9fd74] rounded-[1.5rem] w-[6.5rem] h-[2.5rem]"
+        >
+          <NavLinks
+            isActive={isActive}
+            setIsActive={setIsActive}
+            ease={navEase}
+          />
+        </div>
+        <NavButton isActive={isActive} setIsActive={setIsActive} />
+      </section>
+    </header>
   );
 };
 
