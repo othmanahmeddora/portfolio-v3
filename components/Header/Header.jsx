@@ -7,7 +7,7 @@ import CustomEase from "gsap/dist/CustomEase";
 import NavLinks from "./NavLinks/NavLinks";
 
 const Header = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
   const menuRef = useRef(null);
 
   const navEase = CustomEase.create("navButton", "0.76, 0, 0.24, 1");
@@ -28,7 +28,7 @@ const Header = () => {
     <div className="fixed top-[2rem] right-[2rem]">
       <div
         ref={menuRef}
-        className="bg-[#c9fd74] w-full h-full rounded-[1.5rem]"
+        className="bg-[#c9fd74] rounded-[1.5rem] w-[6.5rem] h-[2.5rem]"
       >
         <NavLinks isActive={isActive} ease={navEase} />
       </div>
