@@ -14,7 +14,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="absolute top-[5%] left-[50%] translate-x-[-50%] text-[20rem] leading-60 uppercase text-center font-bold z-[-1] text-[#c9fd74]">
+      <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[20rem] leading-60 uppercase text-center font-bold z-[-1] text-[#c9fd74]">
         <p className="tracking-[-0.018em]">Frontend</p>
         <p className="tracking-[-0.033em]">Developer</p>
         <p className="tracking-[-0.085em]">Freelancer</p>
