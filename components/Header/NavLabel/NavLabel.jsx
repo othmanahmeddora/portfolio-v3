@@ -35,7 +35,7 @@ const NavLabel = ({ label, ease }) => {
       style={{ lineHeight: 0.85 }}
     >
       <p className="label-1">{label}</p>
-      <p className="label-2 absolute top-[100%]">{label}</p>
+      <p className="label-2 absolute top-full">{label}</p>
     </div>
   );
 };
