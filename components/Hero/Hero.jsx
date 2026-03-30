@@ -73,7 +73,7 @@ const Hero = () => {
       </div>
 
       <div className="absolute bottom-[10%] left-[50%] translate-x-[-50%] z-3 text-white uppercase font-bold">
-        <div className="relative w-[140px] h-[140px]">
+        <div className="relative w-35 h-35">
           <svg
             viewBox="0 0 140 140"
             width="140"
