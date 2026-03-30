@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import CustomEase from "gsap/dist/CustomEase";
 import Link from "next/link";
-import React, { useRef } from "react";
 
 const NavLinks = ({ isActive, setIsActive }) => {
   const linkEase = CustomEase.create("link", ".215, .61, .355, 1");
@@ -60,14 +59,14 @@ const NavLinks = ({ isActive, setIsActive }) => {
 
   return (
     <nav>
-      <div className="flex flex-col h-full w-full translate-y-[6rem] translate-x-[2rem] text-[2.875rem]">
+      <div className="flex flex-col h-full w-full translate-y-24 translate-x-8 text-[2.875rem]">
         {links.map((link) => (
           <div
             key={link.id}
             className="perspective-[120px] perspective-origin-bottom"
           >
             <div className="nav-link opacity-0">
-              <Link href={link.path} className="block my-[1rem]">
+              <Link href={link.path} className="block my-4">
                 {link.name}
               </Link>
             </div>
@@ -75,12 +74,13 @@ const NavLinks = ({ isActive, setIsActive }) => {
         ))}
       </div>
 
-      <div className="translate-y-[15rem] translate-x-[2rem] flex flex-wrap gap-x-[12rem]">
+      <div className="translate-y-40 translate-x-8 flex flex-wrap gap-x-48">
         {socialLinks.map((link) => (
           <Link
             className="social-link opacity-0"
             key={link.id}
             href={link.path}
+            target="_blank"
           >
             {link.name}
           </Link>

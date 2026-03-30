@@ -10,12 +10,12 @@ const Hero = () => {
           width={500}
           alt="Othman Image"
           src="/img/hero.png"
-          className="grayscale w-[40rem]"
+          className="grayscale w-160"
         />
       </div>
 
-      <div className="absolute top-[10%] left-[50%] translate-x-[-50%] text-[20rem] leading-[15rem] uppercase text-center font-[700] z-[-1] text-[#c9fd74]">
-        <p className="tracking-[-0.06em]">Front-end</p>
+      <div className="absolute top-[5%] left-[50%] translate-x-[-50%] text-[20rem] leading-60 uppercase text-center font-bold z-[-1] text-[#c9fd74]">
+        <p className="tracking-[-0.018em]">Frontend</p>
         <p className="tracking-[-0.033em]">Developer</p>
         <p className="tracking-[-0.085em]">Freelancer</p>
       </div>
