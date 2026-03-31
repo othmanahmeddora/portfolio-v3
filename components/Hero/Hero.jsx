@@ -51,7 +51,9 @@ const Hero = () => {
 
   return (
     <>
-      <PageReveal />
+      <section className="fixed top-0 left-0 h-full w-full z-50">
+        <PageReveal />
+      </section>
 
       <section className="h-screen px-4 overflow-hidden relative mx-auto z-0">
         <div className="flex justify-center mt-10 z-50">
