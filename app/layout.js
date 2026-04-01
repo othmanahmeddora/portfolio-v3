@@ -1,5 +1,5 @@
 import Header from "@/components/Header/Header";
-import { Cormorant_Garamond } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 
 export const metadata = {
@@ -14,10 +14,15 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-editorial",
 });
 
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+});
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={cormorant.variable}>
-      <body className={`antialiased`}>
+    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
+      <body className={`${dmSans.className} antialiased`}>
         <Header />
         {children}
       </body>

@@ -10,6 +10,7 @@ const PageReveal = () => {
   const name2 = useRef(null);
   const divider = useRef(null);
   const blocks = useRef([]);
+  const pageRevealContainer = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -30,6 +31,9 @@ const PageReveal = () => {
           delay: 0.5,
           duration: 2,
           ease: "expo.inOut",
+          onComplete: () => {
+            gsap.to(counter, { display: "none" });
+          },
         });
 
         tl.to(name1.current, { y: "0%" }, "-=.5");
@@ -51,6 +55,8 @@ const PageReveal = () => {
         tl.to(name2.current, { y: "-100%" }, "<");
 
         tl.to(blocks.current, { scaleY: 0, duration: 1, stagger: 0.1 });
+
+        tl.to(pageRevealContainer.current, { display: "none" });
       }
 
       counter.textContent = currentCounterValue;
@@ -63,7 +69,7 @@ const PageReveal = () => {
   }, []);
 
   return (
-    <section className="relative z-50 h-screen">
+    <section ref={pageRevealContainer} className="relative z-50 h-screen">
       <div
         ref={(el) => (blocks.current[0] = el)}
         className="absolute bg-[#171717] h-screen w-[50%] top-0 left-0 scale-y-100 origin-top"
@@ -73,14 +79,14 @@ const PageReveal = () => {
         className="absolute bg-[#171717] h-screen w-[50%] top-0 left-[50%] origin-top"
       ></div>
 
-      <h1 className="counter absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[#f5f5f5] text-[15rem]">
+      <h1 className="counter absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[#f5f5f5] text-[15rem] font-sans">
         0
       </h1>
 
-      <div className="overflow-hidden flex items-center gap-8 absolute top-[50%] left-[50%] translate-x-[-52%] translate-y-[-50%] text-[#f5f5f5] text-[2.5rem]">
+      <div className="overflow-hidden flex items-center gap-8 absolute top-[50%] left-[50%] translate-x-[-48%] translate-y-[-50%] text-[#f5f5f5] text-[3rem]">
         <h1
           ref={name1}
-          className="translate-y-[-120%] capitalize font-[pp Editorial Old] italic"
+          className="translate-y-[-120%] capitalize font-editorial font-extralight italic"
         >
           othman
         </h1>

@@ -11,6 +11,7 @@ const Hero = () => {
   const title1 = useRef(null);
   const title2 = useRef(null);
   const title3 = useRef(null);
+  const pageRevealContainer = useRef(null);
 
   useGSAP(() => {
     const split1 = new SplitText(title1.current, {
@@ -29,29 +30,40 @@ const Hero = () => {
       charsClass: "inline-block",
     });
 
-    gsap
-      .timeline()
-      .from(split1.chars, {
+    const tl = gsap.timeline();
+
+    tl.to(pageRevealContainer.current, { display: "none", delay: 8.9 });
+
+    tl.from(
+      split1.chars,
+      {
         y: "400%",
         stagger: 0.1,
         duration: 1.5,
         ease: "expo.out",
-      })
-      .from(
-        split2.chars,
-        { y: "400%", stagger: 0.1, duration: 1.5, ease: "expo.out" },
-        "<",
-      )
-      .from(
-        split3.chars,
-        { y: "400%", stagger: 0.1, duration: 1.5, ease: "expo.out" },
-        "<",
-      );
+      },
+      "-=1.4",
+    );
+
+    tl.from(
+      split2.chars,
+      { y: "400%", stagger: 0.1, duration: 1.5, ease: "expo.out" },
+      "<",
+    );
+
+    tl.from(
+      split3.chars,
+      { y: "400%", stagger: 0.1, duration: 1.5, ease: "expo.out" },
+      "<",
+    );
   }, []);
 
   return (
     <>
-      <section className="fixed top-0 left-0 h-full w-full z-50">
+      <section
+        ref={pageRevealContainer}
+        className="fixed top-0 left-0 h-full w-full z-50"
+      >
         <PageReveal />
       </section>
 
