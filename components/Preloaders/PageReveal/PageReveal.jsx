@@ -78,10 +78,13 @@ const PageReveal = () => {
       </h1>
 
       <div className="overflow-hidden flex items-center gap-8 absolute top-[50%] left-[50%] translate-x-[-52%] translate-y-[-50%] text-[#f5f5f5] text-[2.5rem]">
-        <h1 ref={name1} className="translate-y-[-120%]">
+        <h1
+          ref={name1}
+          className="translate-y-[-120%] capitalize font-[pp Editorial Old] italic"
+        >
           othman
         </h1>
-        <h1 ref={name2} className="translate-y-[120%]">
+        <h1 ref={name2} className="translate-y-[120%] capitalize">
           ahmed
         </h1>
       </div>
