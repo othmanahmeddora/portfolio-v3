@@ -82,7 +82,7 @@ const Hero = () => {
         </div>
 
         <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[20rem] leading-60 uppercase text-center font-bold z-[-1] text-[#c9fd74]">
-          <p ref={title1} className="tracking-[-0.044em] whitespace-nowrap">
+          <p ref={title1} className="tracking-[-0.049em] whitespace-nowrap">
             Front-end
           </p>
           <p ref={title2} className="tracking-[-0.033em] whitespace-nowrap">
