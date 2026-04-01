@@ -12,6 +12,7 @@ const Hero = () => {
   const title2 = useRef(null);
   const title3 = useRef(null);
   const pageRevealContainer = useRef(null);
+  const scrollDownSpinner = useRef(null);
 
   useGSAP(() => {
     const split1 = new SplitText(title1.current, {
@@ -39,7 +40,7 @@ const Hero = () => {
       {
         y: "400%",
         stagger: 0.1,
-        duration: 1.5,
+        duration: 1.6,
         ease: "expo.out",
       },
       "-=1.4",
@@ -47,15 +48,17 @@ const Hero = () => {
 
     tl.from(
       split2.chars,
-      { y: "400%", stagger: 0.1, duration: 1.5, ease: "expo.out" },
+      { y: "400%", stagger: 0.1, duration: 1.6, ease: "expo.out" },
       "<",
     );
 
     tl.from(
       split3.chars,
-      { y: "400%", stagger: 0.1, duration: 1.5, ease: "expo.out" },
+      { y: "400%", stagger: 0.1, duration: 1.6, ease: "expo.out" },
       "<",
     );
+
+    tl.from(scrollDownSpinner.current, { y: "160%", duration: 1 }, "-=1");
   }, []);
 
   return (
@@ -79,18 +82,21 @@ const Hero = () => {
         </div>
 
         <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[20rem] leading-60 uppercase text-center font-bold z-[-1] text-[#c9fd74]">
-          <p ref={title1} className="tracking-[-0.018em] whitespace-nowrap">
-            Frontend
+          <p ref={title1} className="tracking-[-0.044em] whitespace-nowrap">
+            Front-end
           </p>
           <p ref={title2} className="tracking-[-0.033em] whitespace-nowrap">
             Developer
           </p>
-          <p ref={title3} className="tracking-[-0.085em] whitespace-nowrap">
+          <p ref={title3} className="tracking-[-0.0845em] whitespace-nowrap">
             Freelancer
           </p>
         </div>
 
-        <div className="absolute bottom-[10%] left-[50%] translate-x-[-50%] z-3 text-white uppercase font-bold">
+        <div
+          ref={scrollDownSpinner}
+          className="absolute bottom-[10%] left-[50%] translate-x-[-50%] z-3 text-white uppercase font-bold"
+        >
           <div className="relative w-35 h-35">
             <svg
               viewBox="0 0 140 140"
