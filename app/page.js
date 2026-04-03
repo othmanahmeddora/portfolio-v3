@@ -1,5 +1,6 @@
 "use client";
 
+import About from "@/components/About/About";
 import Hero from "@/components/Hero/Hero";
 import { useEffect } from "react";
 
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <div className="bg-[#f5f5f5]">
       <Hero />
+      <About />
     </div>
   );
 }
