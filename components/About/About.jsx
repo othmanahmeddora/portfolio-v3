@@ -11,8 +11,8 @@ const About = () => {
       </p>
 
       <button className="relative overflow-hidden w-60 h-60 bg-[#171717] rounded-full text-white text-[1.2rem] font-[450]">
-        <p className="z-3">Let&#39;s Talk</p>
-        <span className="absolute top-[50%] left-0 w-60 h-60 bg-[#c9fd74] rounded-full"></span>
+        <p className="relative z-3">Let&#39;s Talk</p>
+        <span className="absolute top-full left-0 w-60 h-60 bg-[#c9fd74] rounded-full"></span>
       </button>
     </section>
   );
