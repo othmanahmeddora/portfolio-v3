@@ -50,17 +50,20 @@ const About = () => {
         I&#39;m waiting for you let&#39;s do it now.
       </p>
 
-      <button
+      <a
+        href={"mailto:othmanahmeddora@gmail.com"}
         onMouseEnter={showOverlay}
         onMouseLeave={hideOverlay}
         className="relative cursor-pointer overflow-hidden w-60 h-60 bg-dark outline-0 border-0 rounded-full text-light text-[1.2rem] font-[450]"
       >
-        <p className="relative z-3">Let&#39;s Talk</p>
+        <p className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-3">
+          Let&#39;s Talk
+        </p>
         <span
           ref={CTAOverlay}
           className="absolute top-0 left-0 w-60 h-60 translate-y-full outline-0 border-0 bg-primary rounded-full"
         ></span>
-      </button>
+      </a>
     </section>
   );
 };
