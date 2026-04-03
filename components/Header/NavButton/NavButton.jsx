@@ -32,10 +32,10 @@ const NavButton = ({ isActive, setIsActive }) => {
       className="absolute top-0 right-0 w-26 h-10 rounded-3xl cursor-pointer overflow-hidden uppercase font-normal"
     >
       <div ref={sliderRef} className="slider w-full h-full">
-        <div className="bg-[#c9fd74] text-[#0a0a0a] w-full h-full flex items-center justify-center">
+        <div className="bg-primary text-dark w-full h-full flex items-center justify-center">
           <NavLabel label={"menu"} ease={navEase} />
         </div>
-        <div className="bg-black text-[#c0fd74] w-full h-full flex items-center justify-center">
+        <div className="bg-dark text-primary w-full h-full flex items-center justify-center">
           <NavLabel label={"close"} ease={navEase} />
         </div>
       </div>
