@@ -83,7 +83,7 @@ const PageReveal = () => {
         0
       </h1>
 
-      <div className="overflow-hidden flex items-center gap-8 absolute top-[50%] left-[50%] translate-x-[-52%] translate-y-[-50%] text-[#f5f5f5] text-[3rem]">
+      <div className="overflow-hidden flex items-center gap-8 absolute top-[50%] left-[50%] translate-x-[-48%] translate-y-[-50%] text-[#f5f5f5] text-[3rem]">
         <h1
           ref={name1}
           className="translate-y-[-120%] capitalize font-editorial font-extralight italic"
