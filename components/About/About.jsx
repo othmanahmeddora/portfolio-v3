@@ -1,9 +1,29 @@
-import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import SplitText from "gsap/dist/SplitText";
+import React, { useRef } from "react";
 
 const About = () => {
+  const aboutText = useRef(null);
+
+  useGSAP(() => {
+    const splitText = new SplitText(aboutText.current, { type: "words" });
+    const tl = gsap.timeline();
+
+    tl.from(splitText.words, {
+      y: "100%",
+      duration: 0.1,
+      delay: 9,
+      stagger: 0.05,
+      ease: "circ.Out",
+    });
+  }, []);
   return (
     <section className="flex items-center gap-20 py-40 max-w-360 mx-auto">
-      <p className="w-250 text-[2.7rem] font-[450] text-dark">
+      <p
+        ref={aboutText}
+        className="w-250 text-[2.7rem] font-[450] text-dark translate-y-0"
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, eveniet,
         quisquam mollitia, labore eaque sunt dolores inventore cumque fugiat
         dolorem sint expedita aliquam quis consequuntur repellat corporis

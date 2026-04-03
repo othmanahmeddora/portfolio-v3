@@ -1,14 +1,5 @@
 @import "tailwindcss";
 
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @theme {
   --color-primary: #c9fd74;
   --color-dark: #171717;
@@ -18,4 +9,17 @@
 
 @utility animate-spin-slow {
   animation: spin-slow 8s linear infinite;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
