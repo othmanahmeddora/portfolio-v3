@@ -5,6 +5,7 @@ import React, { useRef } from "react";
 
 const About = () => {
   const aboutText = useRef(null);
+  const CTAOverlay = useRef(null);
 
   useGSAP(() => {
     const splitText = new SplitText(aboutText.current, { type: "words" });
@@ -15,24 +16,50 @@ const About = () => {
       duration: 0.1,
       delay: 9,
       stagger: 0.05,
-      ease: "circ.Out",
+      ease: "circ.out",
     });
   }, []);
+
+  const showOverlay = () => {
+    gsap.to(CTAOverlay.current, {
+      y: "0",
+      duration: 0.5,
+      ease: "power3.inOut",
+    });
+  };
+
+  const hideOverlay = () => {
+    gsap.to(CTAOverlay.current, {
+      y: "-100%",
+      duration: 0.5,
+      ease: "power3.inOut",
+      onComplete: () => {
+        gsap.to(CTAOverlay.current, { y: "100%", duration: 0 });
+      },
+    });
+  };
   return (
     <section className="flex items-center gap-20 py-40 max-w-360 mx-auto">
       <p
         ref={aboutText}
         className="w-250 text-[2.7rem] font-[450] text-dark translate-y-0"
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, eveniet,
-        quisquam mollitia, labore eaque sunt dolores inventore cumque fugiat
-        dolorem sint expedita aliquam quis consequuntur repellat corporis
-        distinctio incidunt ut!
+        Let&#39;s go beyond the normal and create something unique, something
+        that we could leave our mark on it to be remembered and recognized with.{" "}
+        <br />
+        I&#39;m waiting for you let&#39;s do it now.
       </p>
 
-      <button className="relative overflow-hidden w-60 h-60 bg-dark rounded-full text-light text-[1.2rem] font-[450]">
+      <button
+        onMouseEnter={showOverlay}
+        onMouseLeave={hideOverlay}
+        className="relative cursor-pointer overflow-hidden w-60 h-60 bg-dark outline-0 border-0 rounded-full text-light text-[1.2rem] font-[450]"
+      >
         <p className="relative z-3">Let&#39;s Talk</p>
-        <span className="absolute top-full left-0 w-60 h-60 bg-primary rounded-full"></span>
+        <span
+          ref={CTAOverlay}
+          className="absolute top-0 left-0 w-60 h-60 translate-y-full outline-0 border-0 bg-primary rounded-full"
+        ></span>
       </button>
     </section>
   );
