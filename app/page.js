@@ -13,7 +13,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-[#f5f5f5]">
+    <div className="bg-light">
       <Hero />
       <About />
     </div>
