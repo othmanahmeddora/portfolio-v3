@@ -81,7 +81,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[20rem] leading-60 uppercase text-center font-bold z-[-1] text-[#c9fd74]">
+        <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[20rem] leading-60 uppercase text-center font-bold z-[-1] text-primary">
           <p ref={title1} className="tracking-[-0.049em] whitespace-nowrap">
             Front-end
           </p>
@@ -95,7 +95,7 @@ const Hero = () => {
 
         <div
           ref={scrollDownSpinner}
-          className="absolute bottom-[10%] left-[50%] translate-x-[-50%] z-3 text-white uppercase font-bold"
+          className="absolute bottom-[10%] left-[50%] translate-x-[-50%] z-3 text-light uppercase font-bold"
         >
           <div className="relative w-35 h-35">
             <svg
@@ -112,7 +112,7 @@ const Hero = () => {
               </defs>
               <circle cx="70" cy="70" r="38" fill="#c9fd74" />
               <text
-                fill="white"
+                fill="#f5f5f5"
                 fontSize="12.5"
                 fontWeight="600"
                 letterSpacing="3.2"
@@ -130,14 +130,14 @@ const Hero = () => {
                   y1="0"
                   x2="8"
                   y2="16"
-                  stroke="white"
+                  stroke="#f5f5f5"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                 />
                 <polyline
                   points="2,10 8,17 14,10"
                   fill="none"
-                  stroke="white"
+                  stroke="#f5f5f5"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"

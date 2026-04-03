@@ -72,18 +72,18 @@ const PageReveal = () => {
     <section ref={pageRevealContainer} className="relative z-50 h-screen">
       <div
         ref={(el) => (blocks.current[0] = el)}
-        className="absolute bg-[#171717] h-screen w-[50%] top-0 left-0 scale-y-100 origin-top"
+        className="absolute bg-dark h-screen w-[50%] top-0 left-0 scale-y-100 origin-top"
       ></div>
       <div
         ref={(el) => (blocks.current[1] = el)}
-        className="absolute bg-[#171717] h-screen w-[50%] top-0 left-[50%] origin-top"
+        className="absolute bg-dark h-screen w-[50%] top-0 left-[50%] origin-top"
       ></div>
 
-      <h1 className="counter absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[#f5f5f5] text-[15rem] font-sans">
+      <h1 className="counter absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-light text-[15rem] font-sans">
         0
       </h1>
 
-      <div className="overflow-hidden flex items-center gap-8 absolute top-[50%] left-[50%] translate-x-[-48%] translate-y-[-50%] text-[#f5f5f5] text-[3rem]">
+      <div className="overflow-hidden flex items-center gap-8 absolute top-[50%] left-[50%] translate-x-[-48%] translate-y-[-50%] text-light text-[3rem]">
         <h1
           ref={name1}
           className="translate-y-[-120%] capitalize font-editorial font-extralight italic"
@@ -97,7 +97,7 @@ const PageReveal = () => {
 
       <span
         ref={divider}
-        className="absolute top-0 left-[50%] translate-x-[-50%] origin-top w-px h-full bg-white scale-y-0"
+        className="absolute top-0 left-[50%] translate-x-[-50%] origin-top w-px h-full bg-light scale-y-0"
       ></span>
     </section>
   );

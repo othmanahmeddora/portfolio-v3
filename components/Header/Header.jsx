@@ -27,7 +27,7 @@ const Header = () => {
   return (
     <header>
       <section className="fixed top-8 right-8 z-50">
-        <div ref={menuRef} className="bg-[#c9fd74] rounded-3xl w-26 h-10">
+        <div ref={menuRef} className="bg-primary rounded-3xl w-26 h-10">
           <NavLinks
             isActive={isActive}
             setIsActive={setIsActive}
