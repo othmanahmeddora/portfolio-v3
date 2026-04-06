@@ -8,14 +8,18 @@ const About = () => {
   const CTAOverlay = useRef(null);
 
   useGSAP(() => {
-    const splitText = new SplitText(aboutText.current, { type: "words" });
+    const splitText = new SplitText(aboutText.current, {
+      type: "words",
+      mask: "words",
+    });
     const tl = gsap.timeline();
 
     tl.from(splitText.words, {
       y: "100%",
-      duration: 0.1,
+      opacity: 0,
+      duration: 0.5,
       delay: 9,
-      stagger: 0.05,
+      stagger: 0.08,
       ease: "circ.out",
     });
   }, []);
@@ -54,6 +58,8 @@ const About = () => {
         href={"mailto:othmanahmeddora@gmail.com"}
         onMouseEnter={showOverlay}
         onMouseLeave={hideOverlay}
+        data-scroll
+        data-scroll-speed="0.2"
         className="relative cursor-pointer overflow-hidden w-60 h-60 bg-dark outline-0 border-0 rounded-full text-light text-[1.2rem] font-[450]"
       >
         <p className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-3">
