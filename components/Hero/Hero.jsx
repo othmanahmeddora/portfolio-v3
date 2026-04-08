@@ -17,16 +17,19 @@ const Hero = () => {
   useGSAP(() => {
     const split1 = new SplitText(title1.current, {
       type: "chars",
+      mask: "chars",
       tag: "span",
       charsClass: "inline-block",
     });
     const split2 = new SplitText(title2.current, {
       type: "chars",
+      mask: "chars",
       tag: "span",
       charsClass: "inline-block",
     });
     const split3 = new SplitText(title3.current, {
       type: "chars",
+      mask: "chars",
       tag: "span",
       charsClass: "inline-block",
     });

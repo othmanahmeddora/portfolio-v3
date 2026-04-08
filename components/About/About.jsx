@@ -1,7 +1,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import SplitText from "gsap/dist/SplitText";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import React, { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const aboutText = useRef(null);
@@ -12,13 +15,18 @@ const About = () => {
       type: "words",
       mask: "words",
     });
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: aboutText.current,
+        toggleActions: "restart none none none",
+      },
+    });
 
     tl.from(splitText.words, {
       y: "100%",
       opacity: 0,
       duration: 0.5,
-      delay: 9,
+      // delay: 9,
       stagger: 0.08,
       ease: "circ.out",
     });
